@@ -1,0 +1,19 @@
+<h1><%= @figure.name %></h1>
+<h2>Title(s): 
+<% titles = []%>
+<% @figure.titles.each do |title|%>
+    <%titles << title.name%>
+<%end%>
+<%= titles.join(", ")%>
+</h2>
+<h2>Landmark(s): 
+<% landmarks = []%>
+<% @figure.landmarks.each do |landmark|%>
+    <%landmarks << landmark.name%>
+<%end%>
+<%= landmarks.join(", ")%>
+</h2>
+<form action="/figures/<%=@figure.id%>/edit">
+    <input type="submit" value="Edit" />
+</form>
+</h2>
